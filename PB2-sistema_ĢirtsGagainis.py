@@ -1,10 +1,8 @@
-figura = input("Ieraksti kādu figūru tu vēlies aprēķināt.\nizvēles ir: rinķis, trijstūris, taisnleņķa trijsturis,\nkvadrāts, taisnstūris, rombs, trapece:")
-P_vai_S = input("Ko tu vēlies šai figūrai aprēķināt? Ieraksti \"perimetrs\" vai arī \"laukums\"")
+from asyncore import read
 
-if figura == "rinķis" or "Rinķis":
-    if P_vai_S == "perimetrs":
-        radiuss = float(input("Ievadi rinķa rādiusu (pi = 3.14): "))
-        print("Rinķa perimetrs ir =", 2*3.14*radiuss)
-    else:
-        radiuss = float(input("Ievadi rinķa rādiusu (pi = 3.14): "))
-        print("Rinķa laukums ir =",3.14 * radiuss^2)
+path = "C:\\Users\\girts\\Desktop\\Programmēšanas matemātikas darbs\\vardi_un_rezultati.txt"
+fails = open(path, "r+", encoding="utf-8")
+
+vārds = input("Ievadi savu vārdu: ")
+
+print(fails.read())
