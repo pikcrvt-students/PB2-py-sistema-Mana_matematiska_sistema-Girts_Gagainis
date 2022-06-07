@@ -1,4 +1,5 @@
 from random import randint
+from github import Github
 print("Izvēlies kādu no pieejamajām tēmām: kvadrātvienādojums(), pitagora_teorēma()")
 def kvadrātvienādojums():
     gala_punkti = 0
@@ -12,7 +13,6 @@ def kvadrātvienādojums():
         gala_punkti += 1
     else: 
         print("Nepareizi!\n")
-
     #2. uzd
     print("2. Uzdevums: Kādas ir šī piemēra saknes? 5X^2 - 16X + 3 = 0")
     atbilde2 = float(input("1. sakne ir: "))
@@ -22,7 +22,6 @@ def kvadrātvienādojums():
         gala_punkti += 1
     else: 
         print("Nepareizi!\n")
-
     
 
     print("Teorija: Var arī pielietot Vjeta teorēmu, lai noteiktu saknes.\n Reducēta kvadrātvienādojuma sakņu reizinājums ir vienāds ar brīvo locekli, bet sakņu summa ir vienāda ar lineārā locekļa koeficientam pretējo skaitli.")
@@ -62,6 +61,6 @@ def kvadrātvienādojums():
 
 
 
-    print("Tev ir",gala_punkti, "punkti! ")
+    print("Tev ir",gala_punkti, "punkti!")
 kvadrātvienādojums()
 
