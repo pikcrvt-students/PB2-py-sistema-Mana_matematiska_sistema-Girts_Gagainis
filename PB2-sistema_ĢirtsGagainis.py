@@ -12,6 +12,7 @@ def kvadrātvienādojums():
         gala_punkti += 1
     else: 
         print("Nepareizi!\n")
+
     #2. uzd
     print("2. Uzdevums: Kādas ir šī piemēra saknes? 5X^2 - 16X + 3 = 0")
     atbilde2 = float(input("1. sakne ir: "))
@@ -21,6 +22,7 @@ def kvadrātvienādojums():
         gala_punkti += 1
     else: 
         print("Nepareizi!\n")
+
     
 
     print("Teorija: Var arī pielietot Vjeta teorēmu, lai noteiktu saknes.\n Reducēta kvadrātvienādojuma sakņu reizinājums ir vienāds ar brīvo locekli, bet sakņu summa ir vienāda ar lineārā locekļa koeficientam pretējo skaitli.")
@@ -36,11 +38,30 @@ def kvadrātvienādojums():
         gala_punkti += 1
     else: 
         print("Nepareizi!\n")
+    
+    #4 uzd
+    print("4. Uzdevums: Kādas ir šī piemēra BX un C vērtības? AX^2 - BX + C = 0, ja saknes ir 5 un -3?")
+    atbilde6 = float(input("BX vērtība ir: "))
+    atbilde7 = float(input("C vērtība ir: "))
+    if atbilde6 == -2 and atbilde7 == -5:
+        print("Pareiza atbilde! +1 punkts!\n")
+        gala_punkti += 1
+    else: 
+        print("Nepareizi!\n")
+
+    #5 uzd 
+    print("5. Uzdevums: Kāda ir šī piemēra saknes? X^2 - 5X + 6 = 0")
+    atbilde8 = float(input("1. sakne ir: "))
+    atbilde9 = float(input("2. sakne ir: "))
+    if atbilde8 == 2 or atbilde8 == 3 and atbilde9 == 2 or atbilde9 == 3:
+        print("Pareiza atbilde! +1 punkts!\n")
+        gala_punkti += 1
+    else: 
+        print("Nepareizi!\n")
+    
 
 
 
-
-
-    print("Tev ir",gala_punkti, "punkti!")
+    print("Tev ir",gala_punkti, "punkti! ")
 kvadrātvienādojums()
 
