@@ -1,4 +1,6 @@
-    from random import randint, random
+import random
+import math
+
 print("Izvēlies kādu no pieejamajām tēmām: kvadrātvienādojums_teorija(), kvadrātvienādojums_uzdevumi(), kvadrātvienādojums_pd().")
 
 def kvadrātvienādojums_teorija():
@@ -6,7 +8,7 @@ def kvadrātvienādojums_teorija():
     print("Par kvadrātvienādojumu sauc vienādojumu, kurš ir dots (vai to var pārveidot) formā ax2+bx+c=0, kur a, b, c ir reāli skaitļi, turklāt a≠0, bet x - mainīgais.\nVispārīgā kvadrātvienādojuma ax^2+bx+c=0 saknes aprēķina, izmantojot formulu: D=b^2−4ac, un saknes ar x1 = (-b + sqrt(D))/2*a) un x2 = (-b - sqrt(D))/2*a)\n\n")
     print("Saknes arī var aprēķināt ar Vjeta teorēmu. Parasti Vjeta teorēmu lieto reducētam kvadrātvienādojumam, t.i., ja koeficients a = 1.\nax^2 + bx + c = 0        x1 * x2 = c     un   x1 + x2 = -b")
 
-def kvadrātvienādojums():
+def kvadrātvienādojums_uzdevumi():
     #1. uzd
     atbilde1 = int(input("1. uzdevums: Kāds ir diskriminants vienādojumam X^2 + 12X + 7 = 0?: "))
     if atbilde1 == 116:
@@ -53,59 +55,58 @@ def kvadrātvienādojums():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def kvadrātvienādojums_pd():
     print("Kvadrātvienādojuma pārbaudes darbs!\nPārbaudes darbs sastāvēs no 10 dažādiem uzdevumiem, kuri mainīsies katru reizi.\n")
+    print("Saknes noapaļo līdz diviem skaitļiem aiz komata")
 
-    a1 = random.randint(1, 2)
-    b1 = random.randint(1, 10)
-    c1 = random.randint(1, 10)
-    print("1. Vienādojuma saknes ir locekļi ir:\nA =",a1, "\nB =",b1, "\nC =",c1)
+    a_vertibas = [0] * 10
+    b_vertibas = [0] * 10
+    c_vertibas = [0] * 10
+    
+
+    for i in range(10):
+        print(i+1, ". uzdevums:")
+        a_vertibas[i] = random.randint(1, 3)
+        b_vertibas[i] = random.randint(-5, 10)
+        c_vertibas[i] = random.randint(-5, 10)
+        print("Ievadi šī vienādojuma saknes, ja\nA =",a_vertibas[i],"\nB =",a_vertibas[i], "\nC =",c_vertibas[i])
+        diskriminants = (b_vertibas[i]**2) - (4*a_vertibas[i]*c_vertibas[i])
+
+
+        if diskriminants > 0: 
+            sakne1 = (abs(b_vertibas[i])-math.sqrt(diskriminants))/(2 * a_vertibas[i])
+            sakne2 = (abs(b_vertibas[i]) + math.sqrt(diskriminants))/(2 * a_vertibas[i])
+            sakne1 = round(sakne1, 2)
+            sakne2 = round(sakne2, 2)
+            print("sakne1 ==", sakne1)
+            print("sakne2 ==", sakne2)
+            ievadita_sakne1 = float(input("Ievadi pirmās saknes vērtību: "))
+            ievadita_sakne2 = float(input("Ievadi otrās saknes vērtību"))
+            
+            if ievadita_sakne1 == sakne1 or ievadita_sakne1 == sakne2 and ievadita_sakne2 == sakne2 or ievadita_sakne2 == sakne1:
+                print("Pareizi! +1 punkts\n")
+            else:
+                print("Nepareizi! +0 punkti")
+
+
+
+        elif diskriminants == 0: 
+            sakne1 = sakne1 = (b_vertibas[i]-math.sqrt(diskriminants))/(2 * a_vertibas[i])
+            ievadita_sakne1 = float(input("Ievadi pirmās saknes vērtību: "))
+            if ievadita_sakne1 == sakne1:
+                print("Pareizi! +1 punkts\n")
+            else:
+                print("Nepareizi! +0 punkti")
+        
+        else:
+            print("Diskriminants ir zem 0 lmao")
+            
+
+
 
 
 
 
     
+
 
