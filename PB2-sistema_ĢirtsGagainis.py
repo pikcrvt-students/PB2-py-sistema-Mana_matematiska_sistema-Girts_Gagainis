@@ -115,8 +115,8 @@ def kvadrātvienādojums_pd():
     print("Tu ieguvi:", user_punkti, "tavs vārds: ", username)
     
     rezultatu_path = input("Ievadi rezultātu faila lokācijU (C:..faila_nosaukums.txt): ")
-    rezultati = open(rezultatu_path, "r+")
-    rezultati.write(str(user_punkti))
-    rezultati.write(str(username))
+    rezultati = open(rezultatu_path, "a")
+    ko_ierakstit = [username, " ieguva ", user_punkti, "punktus"]
+    rezultati.write("\n")
+    rezultati.write(str(ko_ierakstit))
     rezultati.close
-# C:/users/12DGGagainis/Rezultati.txt
