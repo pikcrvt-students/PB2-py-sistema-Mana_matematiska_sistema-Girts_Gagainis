@@ -1,5 +1,6 @@
 import random
 import math
+from tkinter import Y
 
 print("Izvēlies kādu no pieejamajām tēmām: kvadrātvienādojums_teorija(), kvadrātvienādojums_uzdevumi(), kvadrātvienādojums_pd().")
 
@@ -55,10 +56,16 @@ def kvadrātvienādojums_uzdevumi():
 
 
 
+import random
+import math
+
 def kvadrātvienādojums_pd():
+    username = input("Ievadi savu vārdu: ")
+    vardi_punkti = ["Rezultāti:"]
     print("Kvadrātvienādojuma pārbaudes darbs!\nPārbaudes darbs sastāvēs no 10 dažādiem uzdevumiem, kuri mainīsies katru reizi.\n")
     print("Saknes noapaļo līdz diviem skaitļiem aiz komata")
-
+    max_punkti = 10
+    user_punkti = 0
     a_vertibas = [0] * 10
     b_vertibas = [0] * 10
     c_vertibas = [0] * 10
@@ -67,46 +74,44 @@ def kvadrātvienādojums_pd():
     for i in range(10):
         print(i+1, ". uzdevums:")
         a_vertibas[i] = random.randint(1, 3)
-        b_vertibas[i] = random.randint(-5, 10)
+        b_vertibas[i] = random.randint(5, 15)
         c_vertibas[i] = random.randint(-5, 10)
-        print("Ievadi šī vienādojuma saknes, ja\nA =",a_vertibas[i],"\nB =",a_vertibas[i], "\nC =",c_vertibas[i])
-        diskriminants = (b_vertibas[i]**2) - (4*a_vertibas[i]*c_vertibas[i])
+        print("Ievadi šī vienādojuma saknes, ja\nA =",a_vertibas[i],"\nB =",b_vertibas[i], "\nC =",c_vertibas[i])
+        diskriminants = (math.pow(b_vertibas[i],2)) - (4*a_vertibas[i]*c_vertibas[i])
 
-
-        if diskriminants > 0: 
-            sakne1 = (abs(b_vertibas[i])-math.sqrt(diskriminants))/(2 * a_vertibas[i])
-            sakne2 = (abs(b_vertibas[i]) + math.sqrt(diskriminants))/(2 * a_vertibas[i])
+        if diskriminants > 0:
+            augša1 = -b_vertibas[i] + math.sqrt(diskriminants)
+            leja1 = 2 * a_vertibas[i]
+            sakne1 = augša1 / leja1
+            augša2 = -b_vertibas[i] - math.sqrt(diskriminants)
+            leja2 = 2 * a_vertibas[i]
+            sakne2 = augša2 / leja2
+         
             sakne1 = round(sakne1, 2)
             sakne2 = round(sakne2, 2)
-            print("sakne1 ==", sakne1)
-            print("sakne2 ==", sakne2)
             ievadita_sakne1 = float(input("Ievadi pirmās saknes vērtību: "))
-            ievadita_sakne2 = float(input("Ievadi otrās saknes vērtību"))
+            ievadita_sakne2 = float(input("Ievadi otrās saknes vērtību: "))
             
             if ievadita_sakne1 == sakne1 or ievadita_sakne1 == sakne2 and ievadita_sakne2 == sakne2 or ievadita_sakne2 == sakne1:
                 print("Pareizi! +1 punkts\n")
+                user_punkti += 1
             else:
                 print("Nepareizi! +0 punkti")
 
 
 
         elif diskriminants == 0: 
-            sakne1 = sakne1 = (b_vertibas[i]-math.sqrt(diskriminants))/(2 * a_vertibas[i])
+            sakne1 = sakne1 = (-b_vertibas[i]-math.sqrt(diskriminants))/(2 * a_vertibas[i])
             ievadita_sakne1 = float(input("Ievadi pirmās saknes vērtību: "))
             if ievadita_sakne1 == sakne1:
                 print("Pareizi! +1 punkts\n")
+                user_punkti += 1
             else:
                 print("Nepareizi! +0 punkti")
         
         else:
-            print("Diskriminants ir zem 0 lmao")
-            
-
-
-
-
-
-
+            print("Diskriminanta sakne ir 0, nākamais piemērs")
+        
+    print("Tu ieguvi:", user_punkti, "tavs vārds: ", username)
     
-
-
+    rezultatu_path = input("Ievadi rezultātu faila lokācijU (C:..faila_nosaukums.txt): ")
