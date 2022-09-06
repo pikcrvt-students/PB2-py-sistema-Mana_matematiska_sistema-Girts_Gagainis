@@ -1,3 +1,4 @@
+
 import random
 import math
 from tkinter import Y
@@ -11,9 +12,11 @@ def kvadrātvienādojums_teorija():
 
 def kvadrātvienādojums_uzdevumi():
     #1. uzd
+    user_punkti = 0
     atbilde1 = int(input("1. uzdevums: Kāds ir diskriminants vienādojumam X^2 + 12X + 7 = 0?: "))
     if atbilde1 == 116:
         print("Pareiza atbilde! +1 punkts!\n")
+        user_punkti += 1
     else: 
         print("Nepareizi!\n")
 
@@ -23,6 +26,7 @@ def kvadrātvienādojums_uzdevumi():
     atbilde3 = float(input("2. sakne ir: "))
     if atbilde2 == 3 or atbilde2 == 0.2 and atbilde3 == 0.2 or atbilde3 == 3:
         print("Pareiza atbilde! +1 punkts!\n")
+        user_punkti += 1
     else: 
         print("Nepareizi!\n")
     
@@ -32,6 +36,7 @@ def kvadrātvienādojums_uzdevumi():
     atbilde5 = float(input("2. sakne ir: "))
     if atbilde4 == 10 or atbilde4 == 4 and atbilde5 == 4 or atbilde5 == 10:
         print("Pareiza atbilde! +1 punkts!\n")
+        user_punkti += 1
     else: 
         print("Nepareizi!\n")
     
@@ -41,6 +46,7 @@ def kvadrātvienādojums_uzdevumi():
     atbilde7 = float(input("C vērtība ir: "))
     if atbilde6 == -2 and atbilde7 == -5:
         print("Pareiza atbilde! +1 punkts!\n")
+        user_punkti += 1
     else: 
         print("Nepareizi!\n")
 
@@ -50,9 +56,10 @@ def kvadrātvienādojums_uzdevumi():
     atbilde9 = float(input("2. sakne ir: "))
     if atbilde8 == 2 or atbilde8 == 3 and atbilde9 == 2 or atbilde9 == 3:
         print("Pareiza atbilde! +1 punkts!\n")
+        user_punkti += 1
     else: 
         print("Nepareizi!\n")
-
+    print("Tu ieguvi:", user_punkti, "punktus!")
 
 
 
@@ -75,7 +82,7 @@ def kvadrātvienādojums_pd():
         print(i+1, ". uzdevums:")
         a_vertibas[i] = random.randint(1, 3)
         b_vertibas[i] = random.randint(5, 15)
-        c_vertibas[i] = random.randint(-5, 10)
+        c_vertibas[i] = random.randint(1, 10)
         print("Ievadi šī vienādojuma saknes, ja\nA =",a_vertibas[i],"\nB =",b_vertibas[i], "\nC =",c_vertibas[i])
         diskriminants = (math.pow(b_vertibas[i],2)) - (4*a_vertibas[i]*c_vertibas[i])
 
@@ -114,7 +121,7 @@ def kvadrātvienādojums_pd():
         
     print("Tu ieguvi:", user_punkti, "tavs vārds: ", username)
     
-    rezultatu_path = input("Ievadi rezultātu faila lokācijU (C:..faila_nosaukums.txt): ")
+    rezultatu_path = input("Ievadi rezultātu faila lokāciju (C:..faila_nosaukums.txt): ")
     rezultati = open(rezultatu_path, "a")
     ko_ierakstit = [username, " ieguva ", user_punkti, "punktus"]
     rezultati.write("\n")
